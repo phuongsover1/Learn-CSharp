@@ -22,6 +22,14 @@ namespace DatatypesAndVariables
             Console.WriteLine("num3: " + num3 + ", num4: " + num4+ ", num5: " + num5);
 
 
+            double d1 = 3.1415;
+            double d2 = 5.1;
+            double dDiv = d1 / d2;
+            Console.WriteLine("d1/d2 is " + dDiv);
+
+            float f1 = 3.2424f; // must have 'f' suffix when assign value to float type
+            float f2 = 5.1f;
+            Console.WriteLine("f1/f2: " + f1/f2); 
         }
     }
 } 
