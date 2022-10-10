@@ -3,7 +3,7 @@ namespace DatatypesAndVariables
 {
     class Program
     {
-        static void Main(string[] args)
+/*        static void Main(string[] args)
         {
             //// declaring a variable
             // int num1;
@@ -51,6 +51,6 @@ namespace DatatypesAndVariables
             Console.WriteLine("lowerMessage: " + lowerCaseMessage);
 
 
-        }
+        }*/
     }
 }
