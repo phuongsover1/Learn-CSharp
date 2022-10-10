@@ -41,7 +41,15 @@ namespace DatatypesAndVariables
 
             string message = "My name is " + myName;
 
-            Console.WriteLine(message);
+            string capsMessage = message.ToUpper();
+
+            string lowerCaseMessage = message.ToLower();
+
+
+            Console.WriteLine("message: " + message);
+            Console.WriteLine("capsMessage: " + capsMessage);
+            Console.WriteLine("lowerMessage: " + lowerCaseMessage);
+
 
         }
     }
