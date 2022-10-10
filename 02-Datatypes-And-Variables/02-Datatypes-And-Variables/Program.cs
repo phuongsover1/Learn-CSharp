@@ -29,7 +29,12 @@ namespace DatatypesAndVariables
 
             float f1 = 3.2424f; // must have 'f' suffix when assign value to float type
             float f2 = 5.1f;
-            Console.WriteLine("f1/f2: " + f1/f2); 
+            Console.WriteLine("f1/f2: " + f1/f2);
+
+            double dIDiv = d1 / num1;
+            Console.WriteLine( "dIDiv" + dIDiv);
+
+            int dIdivInt = d1 / num1; // error because the result of this evaluation is double's type. Cannot implicitly cast to int.
         }
     }
 } 
