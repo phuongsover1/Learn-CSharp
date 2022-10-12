@@ -8,7 +8,7 @@ namespace _02_Datatypes_And_Variables
 {
     internal class ExplicitAndImplicitConversion
     {
-        public static void Main(string[] args)
+/*        public static void Main(string[] args)
         {
             double myDouble = 13.37;
             int myInt;
@@ -33,5 +33,5 @@ namespace _02_Datatypes_And_Variables
             string myBoolString = sunIsShining.ToString();
             Console.WriteLine("myBoolString: " + myBoolString);
         }
-    }
+*/    }
 }
