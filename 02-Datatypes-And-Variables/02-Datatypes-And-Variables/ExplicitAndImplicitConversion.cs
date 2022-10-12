@@ -16,6 +16,12 @@ namespace _02_Datatypes_And_Variables
             // cast double to int explicitly
             myInt = (int)myDouble;
             Console.WriteLine(myInt);
+
+            // implicit conversion
+            int num = 12345432;
+            long bigNum = num;
+
+            double bigDouble = bigNum; 
         }
     }
 }
