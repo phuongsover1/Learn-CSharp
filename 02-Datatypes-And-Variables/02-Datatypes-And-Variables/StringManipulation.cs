@@ -8,7 +8,7 @@ namespace _02_Datatypes_And_Variables
 {
     internal class StringManipulation
     {
-        public static void Main(string[] args)
+/*        public static void Main(string[] args)
         {
             // define few variables
             int age = 31;
@@ -36,7 +36,10 @@ namespace _02_Datatypes_And_Variables
             Console.WriteLine(@"Lorem ip sum dolir sit am\et,
 dfdkfjkd
 dfjdk \n fdkfjkdjf");
-    
+           
+
+
+
         }
-    }
+*/    }
 }
