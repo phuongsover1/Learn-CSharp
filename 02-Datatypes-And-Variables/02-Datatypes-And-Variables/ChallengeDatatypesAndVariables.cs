@@ -8,9 +8,9 @@ namespace _02_Datatypes_And_Variables
 {
     internal class ChallengeDatatypesAndVariables
     {
-        public static void Main(string[] args)
+/*        public static void Main(string[] args)
         {
-            /*
+            *//*
              *Now that you know how to declare and initialize Variables, please go ahead and create a variable for each of the primitivedatatypes(you can find the list here). Leave the Object datatype out.
               And also please initialize each variable with a working value.
 
@@ -24,7 +24,7 @@ namespace _02_Datatypes_And_Variables
               Have fun:) 
              * 
              * 
-             */
+             *//*
             byte byteNumber = 21;// 0 to 255
             sbyte sbyteNumber = -127;// 0127 to 127
             int intNumber = 123; // 
@@ -44,5 +44,5 @@ namespace _02_Datatypes_And_Variables
             float parsedNumber = float.Parse(numberInStr);
             Console.Write("parsedNumber:{0}", parsedNumber);
         }
-    }
+*/    }
 }
