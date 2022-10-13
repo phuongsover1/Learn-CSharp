@@ -8,9 +8,9 @@ namespace _02_Datatypes_And_Variables
 {
     internal class Challenge_String_and_its_methods
     {
-        public static void Main(string[] args)
+/*        public static void Main(string[] args)
         {
-            /*
+            *//*
              *Challenge 1 String and its methods
 
             Now you know the use of various string functions so lets create a small Console application to practice this.
@@ -32,15 +32,30 @@ namespace _02_Datatypes_And_Variables
              * 
              */
 
-            string myStr;
-            Console.Write("Please enter your name and press enter:");
-            myStr = Console.ReadLine();
-            Console.WriteLine("String Uppercase:" + myStr.ToUpper());
-            Console.WriteLine("String Lowercase:{0}", myStr.ToLower());
-            Console.WriteLine("Trimmed String:{0}", myStr.Trim());
-            Console.WriteLine("My last name:{0}", myStr.Trim().Substring(myStr.Trim().IndexOf(" ") + 1)); ;
+            /*            string mystr;
+                        console.write("please enter your name and press enter:");
+                        mystr = console.readline();
+                        console.writeline("string uppercase:" + mystr.toupper());
+                        console.writeline("string lowercase:{0}", mystr.tolower());
+                        console.writeline("trimmed string:{0}", mystr.trim());
+                        console.writeline("my last name:{0}", mystr.trim().substring(mystr.trim().indexof(" ") + 1)); ;*//*
 
+
+            string myName;
+            Console.Write("Please enter your name and press enter : ");
+            myName = Console.ReadLine();
+            string myUppercase = String.Format("Upper case:{0}", myName.ToUpper());
+            string myLowercase = String.Format("Lower case:{0}", myName.ToLower());
+            string myTrimmed = String.Format("Trimmed:{0}", myName.Trim());
+            string myLastName = String.Format("My last name is:{0}", myTrimmed.Substring(myTrimmed.IndexOf(' ') + 1));
+            string myFirstName = String.Format("My first name is:{0}", myTrimmed.Substring(0, myTrimmed.IndexOf(' ')));
+            Console.WriteLine(myUppercase);
+            Console.WriteLine(myLowercase);
+            Console.WriteLine(myTrimmed);
+            Console.WriteLine(myLastName);
+            Console.WriteLine(myFirstName);
+            
 
         }
-    }
+*/    }
 }
