@@ -8,7 +8,7 @@ namespace _02_Datatypes_And_Variables
 {
     internal class ChallengeStringAndItsMethods2
     {
-        public static void Main(string[] args)
+/*        public static void Main(string[] args)
         {
             Console.Write("Enter a string here:");
             string aString = Console.ReadLine();
@@ -33,5 +33,5 @@ namespace _02_Datatypes_And_Variables
             string fullName = String.Concat(firstName, " ", lastName);
             Console.WriteLine("Your full name is:{0}", fullName);
         }
-    }
+*/    }
 }
