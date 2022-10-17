@@ -10,12 +10,20 @@ namespace _06_object_oriented
     internal class Human
     {
         // member variable
-        public string  firstName;
+        string  firstName;
+        string lastName;
+
+        // constructor
+        public Human(string firstName, string lastName)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
 
         // member 
         public void IntroduceMyself()
         {
-            Console.WriteLine("Hi my name is {0}", firstName);
+            Console.WriteLine("Hi my name is {0} {1}", firstName, lastName);
 
         }
 

@@ -9,8 +9,7 @@ namespace _06_object_oriented_
         {
             // create an object of my class
             // an instance of Human
-            Human denis = new Human();
-            denis.firstName = "Phuong";
+            Human denis = new Human("Phuong", "Nguyen");
             denis.IntroduceMyself();
 
 
