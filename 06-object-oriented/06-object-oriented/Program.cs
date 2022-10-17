@@ -13,6 +13,8 @@ namespace _06_object_oriented_
             denis.IntroduceMyself();
             denis.FirstName = "Khang";
             Console.WriteLine(denis.FirstName);
+            denis.LastName = "LLLLL";
+            Console.WriteLine(denis.LastName);
 
 
 

@@ -9,20 +9,19 @@ namespace _06_object_oriented
     // this calss is a blueprint for a datatype
     internal class Human
     {
-        // member variable
-        private string  firstName;
-        private string lastName;
-        private string eyeColor;
-        private int age;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EyeColor { get; private set; }
+        public int Age { get; set; }
 
 
         // constructor
         public Human(string firstName, string lastName, string eyeColor, int age)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.eyeColor = eyeColor;
-            this.age = age;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.EyeColor = eyeColor;
+            this.Age = age;
         }
 
         public Human()
@@ -33,21 +32,11 @@ namespace _06_object_oriented
         // member 
         public void IntroduceMyself()
         {
-            Console.WriteLine("Hi my name is {0} {1} and {2} years old. My eye color is {3}", firstName, lastName, age,eyeColor);
+            Console.WriteLine("Hi my name is {0} {1} and {2} years old. My eye color is {3}",
+                FirstName, LastName, Age, EyeColor);
 
         }
 
-        public string FirstName
-        {
-            get
-            {
-                return firstName;
-            }
-            set
-            {
-                firstName = value;
-            }
-        }
 
     }
 }
