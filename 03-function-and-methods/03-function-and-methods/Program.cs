@@ -4,7 +4,7 @@ namespace _03function_and_methods_
 {
     public class Program
     {
-        public static void Main(string[] args)
+/*        public static void Main(string[] args)
         {
             //writesomething();
             //writesomethingspecific("i am an argument and am called from a method");
@@ -17,7 +17,7 @@ namespace _03function_and_methods_
             Console.WriteLine("Devide: {0}", Devide(3, 4));
 
         }
-        public static int Add(int num1, int num2)
+*/        public static int Add(int num1, int num2)
         {
             return num1 + num2;
         }
