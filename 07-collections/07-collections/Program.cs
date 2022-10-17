@@ -18,8 +18,7 @@ namespace _07_collections
 
             //Params.ParamsMethod2(1, 2, 'c', "Phuong", false, true, 1.234f, 234.34);
 
-            //_ArrayList.Run();
-            _Hashtable.Run();
+            _ArrayList.Run();
         }
     }
 }
