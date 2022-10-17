@@ -4,7 +4,7 @@ namespace _07_collections_
 {
     public class Arrays
     {
-        public static void Main(string[] args)
+/*        public static void Main()
         {
             int[] grades = new int[5];
 
@@ -24,5 +24,5 @@ namespace _07_collections_
             // Getting the Length of an array
             Console.WriteLine(gradesOfMathStudentsA.Length);
         }
-    }
+*/    }
 }
