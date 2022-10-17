@@ -11,7 +11,9 @@ namespace _07_collections
     {
         public static void Main(string[] args)
         {
-            JaggedArray.Run();
+            //JaggedArray.Run();
+
+            Params.ParamsMethod(1, 2, 3, 4, 5, 6);
 
         }
     }
