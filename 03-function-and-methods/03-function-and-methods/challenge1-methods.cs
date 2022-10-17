@@ -9,7 +9,7 @@ namespace _03_function_and_methods
     public class challenge1_methods
     {
 
-        public static void Main(string[] args)
+/*        public static void Main(string[] args)
         {
             string friend1 = "Khang";
             string friend2 = "Luu";
@@ -18,7 +18,7 @@ namespace _03_function_and_methods
             GreetFriend(friend2);
             GreetFriend(friend3);
         }
-        private static void GreetFriend(string name)
+*/        private static void GreetFriend(string name)
         {
             Console.WriteLine("Hi {0}, my friend!", name);
         }
