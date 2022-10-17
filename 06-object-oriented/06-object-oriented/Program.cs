@@ -11,8 +11,9 @@ namespace _06_object_oriented_
             // an instance of Human
             Human denis = new Human("Phuong", "Nguyen", "black", 21);
             denis.IntroduceMyself();
+            denis.FirstName = "Khang";
+            Console.WriteLine(denis.FirstName);
 
-            Human phuong = new Human();
 
 
         }

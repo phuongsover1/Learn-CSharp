@@ -37,5 +37,17 @@ namespace _06_object_oriented
 
         }
 
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
+            set
+            {
+                firstName = value;
+            }
+        }
+
     }
 }
