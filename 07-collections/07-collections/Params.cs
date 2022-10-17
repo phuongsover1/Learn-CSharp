@@ -23,5 +23,18 @@ namespace _07_collections
                 Console.WriteLine(k);
             }
         }
+
+        public static int MinV2(params int[] numbers)
+        {
+            int min = int.MaxValue;
+            foreach(int num in numbers)
+            {
+                if (num < min)
+                {
+                    min = num;
+                }
+            }
+            return min; 
+        }
     }
 }
