@@ -22,19 +22,29 @@ namespace _07_collections
             hashtable.Add(student2.Id, student2);
             hashtable.Add(student3.Id, student3);
             hashtable.Add(student4.Id, student4);
+            hashtable.Add("Phuong", "Phuong Nguyen");
 
             // retriving data from hashtable
             Student storedStudent1 = (Student)hashtable[student1.Id];
 
             // loop through hashtable
-            foreach(DictionaryEntry entry in hashtable)
+            //foreach(DictionaryEntry entry in hashtable)
+            //{
+            //    Student temp = (Student)entry.Value;
+            //    Console.WriteLine("Student's id :{0}", temp.Id);
+            //    Console.WriteLine("Student's name :{0}", temp.Name);
+            //    Console.WriteLine("Student's GPA :{0}", temp.GPA);
+            //}
+
+            // only work if all the valuese is Student type
+            foreach(Student student in hashtable.Values)
             {
-                Student temp = (Student)entry.Value;
-                Console.WriteLine("Student's id :{0}", temp.Id);
-                Console.WriteLine("Student's name :{0}", temp.Name);
-                Console.WriteLine("Student's GPA :{0}", temp.GPA);
+                Console.WriteLine("Student's id :{0}", student.Id);
+                Console.WriteLine("Student's name :{0}", student.Name);
+                Console.WriteLine("Student's GPA :{0}", student.GPA);
             }
         }
+
     }
 
     class Student
