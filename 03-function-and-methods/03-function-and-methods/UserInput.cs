@@ -8,11 +8,11 @@ namespace _03_function_and_methods
 {
     internal class UserInput
     {
-        public static void Main(string[] args)
+/*        public static void Main(string[] args)
         {
             Console.WriteLine(Calculate());
         }
-
+*/
         private static int Calculate()
         {
             Console.Write("Please enter the first number:");
