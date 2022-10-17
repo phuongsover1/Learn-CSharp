@@ -13,8 +13,10 @@ namespace _07_collections
         {
             //JaggedArray.Run();
 
-            Params.ParamsMethod(1, 2, 3, 4, 5, 6);
+            //Params.ParamsMethod(1, 2, 3, 4, 5, 6);
+            //Params.ParamsMethod();
 
+            Params.ParamsMethod2(1, 2, 'c', "Phuong", false, true, 1.234f, 234.34);
         }
     }
 }

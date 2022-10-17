@@ -15,5 +15,13 @@ namespace _07_collections
                 Console.WriteLine(k);
             }
         }
+
+        public static void ParamsMethod2(params object[] stuff)
+        {
+            foreach(object k in stuff)
+            {
+                Console.WriteLine(k);
+            }
+        }
     }
 }
