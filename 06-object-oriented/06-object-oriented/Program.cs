@@ -12,6 +12,7 @@ namespace _06_object_oriented_
             Human denis = new Human("Phuong", "Nguyen", "black", 21);
             denis.IntroduceMyself();
 
+            Human phuong = new Human();
 
 
         }

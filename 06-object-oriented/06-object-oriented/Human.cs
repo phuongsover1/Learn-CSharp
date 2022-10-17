@@ -25,6 +25,11 @@ namespace _06_object_oriented
             this.age = age;
         }
 
+        public Human()
+        {
+            Console.WriteLine("Constructor called. Object created");
+        }
+
         // member 
         public void IntroduceMyself()
         {
