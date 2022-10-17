@@ -10,18 +10,32 @@ namespace _07_collections
     {
         public static void Main(string[] args)
         {
-            int[] nums = new int[10];
+            //int[] nums = new int[10];
 
 
-            for (int i = 1; i <= nums.Length; ++i)
+            //for (int i = 1; i <= nums.Length; ++i)
+            //{
+            //    nums[i - 1] = i;
+            //}
+
+            //foreach (int k in nums)
+            //{
+            //    Console.WriteLine(k);
+            //}
+
+            // Create an array with 5 of your best friends
+            // Create a foreach loop which greets all of them
+
+            string[] myfriends = { "Khang", "Long" , "Luu", "Quy", "Thinh"};
+            foreach(string name in myfriends)
             {
-                nums[i - 1] = i;
+                Greeting(name);
             }
+        }
 
-            foreach(int k in nums)
-            {
-                Console.WriteLine(k);
-            }
+        private static void Greeting(string name)
+        {
+            Console.WriteLine("Hi {0}, my friend!", name);
         }
     }
 }
