@@ -42,16 +42,34 @@ namespace _07_collections
             }
 
             // using TryGetValue() it returns true if the operation was successful and false otherwise
-            employee = null;
-            if (myDictionary.TryGetValue("Intern", out employee)) {
-                Console.WriteLine("Value Retrieved!.");
-                Console.WriteLine("Employee Name: {0}", employee.Name);
-                Console.WriteLine("Employee Role: {0}", employee.Role);
-                Console.WriteLine("Employee Age: {0}", employee.Age);
-            } else
+            //employee = null;
+            //if (myDictionary.TryGetValue("Intern", out employee)) {
+            //    Console.WriteLine("Value Retrieved!.");
+            //    Console.WriteLine("Employee Name: {0}", employee.Name);
+            //    Console.WriteLine("Employee Role: {0}", employee.Role);
+            //    Console.WriteLine("Employee Age: {0}", employee.Age);
+            //} else
+            //{
+            //    Console.WriteLine("The key does not exist");
+            //}
+
+            // another way to loop through dictionary
+            for (int i = 0; i < myDictionary.Count; ++i)
             {
-                Console.WriteLine("The key does not exist");
+                // using ElementAt(i) to return the key-value pair stored at index i
+                KeyValuePair<string, Employee> keyValuePair = myDictionary.ElementAt(i);
+
+                // print the key
+                Console.WriteLine("Key: {0}", keyValuePair.Key);
+
+                // storing the value in an employee object
+                Employee employeeValue = keyValuePair.Value;
+                // printing the properties of the employee object
+                Console.WriteLine("Employee Name: {0}", employeeValue.Name );
+                Console.WriteLine("Employee Role: {0}", employeeValue.Role);
+                Console.WriteLine("Employee Age: {0}", employeeValue.Age);
             }
+
 
 
         }
