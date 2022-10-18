@@ -22,7 +22,7 @@ namespace _07_collections
 
             Dictionary<string, Employee> myDictionary = new Dictionary<string, Employee>();
 
-            foreach(Employee e in employees)
+            foreach (Employee e in employees)
             {
                 myDictionary.Add(e.Role, e);
             }
@@ -31,6 +31,15 @@ namespace _07_collections
             Console.WriteLine("Employee Name: {0}, Role: {1}, Salary: {2}", ceo.Name, ceo.Role, ceo.Salary);
 
 
+            // best practice when getting value from dictionary through key
+            string key = "CTO";
+            Employee employee = null;
+            if (myDictionary.ContainsKey(key))
+            {
+
+                employee = myDictionary[key];
+                Console.WriteLine("Employee Name: {0}, Role: {1}, Salary: {2}", employee.Name, employee.Role, employee.Salary);
+            }
 
 
         }
@@ -44,7 +53,7 @@ namespace _07_collections
         public int Age { get; set; }
 
         public float Rate { get; set; }
-        
+
         public float Salary
         {
             get
