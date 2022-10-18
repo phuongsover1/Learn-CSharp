@@ -6,33 +6,12 @@ using System.Threading.Tasks;
 
 namespace _09_inheritance_and_more_about_oop
 {
-    internal class Radio 
+    internal class Radio : ElectricalDevice
     {
-        // boolean to determine the state of the Radio
-        public bool IsOn { get; set; }
-
-        // string for the brand the name of the radio
-        public string Brand { get; set; }
-
-
-        public Radio(bool isOn, string brand)
+        public Radio(bool isOn, string brand):base(isOn,brand)
         {
-            this.IsOn = isOn;
-            this.Brand = brand;
         }
 
-        // switch off the radio
-        public void SwitchOff()
-        {
-            IsOn = false;
-        }
-
-        // switch on the radio
-        public void SwitchOn()
-        {
-            IsOn = true;
-        }
-        // method to listen to the radio
 
         public void ListenRadio()
         {

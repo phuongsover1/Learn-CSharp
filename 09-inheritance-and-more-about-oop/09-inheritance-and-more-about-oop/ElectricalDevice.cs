@@ -34,16 +34,5 @@ namespace _09_inheritance_and_more_about_oop
         }
         // method to listen to the device
 
-        public void ListenToDevice()
-        {
-            if (IsOn)
-            {
-                Console.WriteLine("Listening to the device!");
-            } else
-            {
-                Console.WriteLine("Device is switched off, switch it on first");
-            }
-        }
-
     }
 }
