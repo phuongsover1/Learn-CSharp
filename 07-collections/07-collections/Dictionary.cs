@@ -41,6 +41,18 @@ namespace _07_collections
                 Console.WriteLine("Employee Name: {0}, Role: {1}, Salary: {2}", employee.Name, employee.Role, employee.Salary);
             }
 
+            // using TryGetValue() it returns true if the operation was successful and false otherwise
+            employee = null;
+            if (myDictionary.TryGetValue("Intern", out employee)) {
+                Console.WriteLine("Value Retrieved!.");
+                Console.WriteLine("Employee Name: {0}", employee.Name);
+                Console.WriteLine("Employee Role: {0}", employee.Role);
+                Console.WriteLine("Employee Age: {0}", employee.Age);
+            } else
+            {
+                Console.WriteLine("The key does not exist");
+            }
+
 
         }
     }
