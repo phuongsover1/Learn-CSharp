@@ -54,20 +54,36 @@ namespace _07_collections
             //}
 
             // another way to loop through dictionary
-            for (int i = 0; i < myDictionary.Count; ++i)
+            //for (int i = 0; i < myDictionary.Count; ++i)
+            //{
+            //    // using ElementAt(i) to return the key-value pair stored at index i
+            //    KeyValuePair<string, Employee> keyValuePair = myDictionary.ElementAt(i);
+
+            //    // print the key
+            //    Console.WriteLine("Key: {0}", keyValuePair.Key);
+
+            //    // storing the value in an employee object
+            //    Employee employeeValue = keyValuePair.Value;
+            //    // printing the properties of the employee object
+            //    Console.WriteLine("Employee Name: {0}", employeeValue.Name );
+            //    Console.WriteLine("Employee Role: {0}", employeeValue.Role);
+            //    Console.WriteLine("Employee Age: {0}", employeeValue.Age);
+            //}
+
+            // Update
+            string keyToUpdate = "HR";
+            if (myDictionary.ContainsKey(keyToUpdate))
             {
-                // using ElementAt(i) to return the key-value pair stored at index i
-                KeyValuePair<string, Employee> keyValuePair = myDictionary.ElementAt(i);
+                myDictionary[keyToUpdate] = new Employee("HR", "Eleka", 26);
+                Console.WriteLine("Employee with Role/Key {0} was updated !.", keyToUpdate);
+            }
 
-                // print the key
-                Console.WriteLine("Key: {0}", keyValuePair.Key);
 
-                // storing the value in an employee object
-                Employee employeeValue = keyValuePair.Value;
-                // printing the properties of the employee object
-                Console.WriteLine("Employee Name: {0}", employeeValue.Name );
-                Console.WriteLine("Employee Role: {0}", employeeValue.Role);
-                Console.WriteLine("Employee Age: {0}", employeeValue.Age);
+            // Remove
+            string keyToRemove = "Intern";
+            if (myDictionary.Remove(keyToRemove))
+            {
+                Console.WriteLine("Employee with Role/Key was Removed!", keyToRemove);
             }
 
 
