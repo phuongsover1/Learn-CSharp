@@ -6,14 +6,11 @@ namespace _09_inheritance_and_more_about_oop
     {
         public static void Main(string[] args)
         {
-            Radio myRadio = new Radio(false, "Sony");
-            myRadio.SwitchOff();
-            myRadio.ListenRadio();
-
-            TV myTV = new TV(false, "samsung");
-
-            myTV.SwitchOn();
-            myTV.WatchTV();
+            Dog dog = new Dog("Lu", 1);
+            Console.WriteLine($"{dog.Name} is {dog.Age} years old.");
+            dog.MakeSound();
+            dog.Play();
+            dog.Eat();
         }
         
     }

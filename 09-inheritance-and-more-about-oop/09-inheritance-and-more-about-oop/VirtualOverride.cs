@@ -11,13 +11,13 @@ namespace _09_inheritance_and_more_about_oop
     class Animal
     {
         public string Name { get; set; }
-        public int age { get; set; }
+        public int Age { get; set; }
         public bool IsHungry { get; set; }
 
         public Animal(string name, int age)
         {
             this.Name = name;
-            this.age = age;
+            this.Age = age;
 
             // in our case all our animals are hungry by default
             IsHungry = true;
