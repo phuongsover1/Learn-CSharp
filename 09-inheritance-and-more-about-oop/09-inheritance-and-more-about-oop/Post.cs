@@ -46,5 +46,12 @@ namespace _09_inheritance_and_more_about_oop
         {
             return String.Format("{0} - {1} - by {2}", this.ID, this.Title, this.SendByUsername); 
         }
+
+        public static void Run()
+        {
+            Post post1 = new Post("Thanks for the birthday wishes", true, "Denis Panjuta");
+            Console.WriteLine(post1.ToString());
+           
+        }
     }
 }
