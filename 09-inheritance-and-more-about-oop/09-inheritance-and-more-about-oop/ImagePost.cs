@@ -21,5 +21,9 @@ namespace _09_inheritance_and_more_about_oop
             ID = GetNextID();
             ImageURL = imageURL;
         }
+        public override string ToString()
+        {
+            return String.Format("{0}. More details in {1}", base.ToString(), ImageURL); ;
+        }
     }
 }
