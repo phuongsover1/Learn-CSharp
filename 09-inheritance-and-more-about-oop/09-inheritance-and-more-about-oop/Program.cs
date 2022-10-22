@@ -6,7 +6,7 @@ namespace _09_inheritance_and_more_about_oop
     {
         public static void Main(string[] args)
         {
-            Employee.Run();
+            Ticket.Run();
         }
         
     }
