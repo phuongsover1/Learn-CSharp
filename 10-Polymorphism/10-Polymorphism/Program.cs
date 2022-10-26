@@ -7,28 +7,27 @@ namespace _10_polymorphism_
     {
         public static void Main(string[] args)
         {
-            // a car can be a BMW, an Audi, a Porsche etc,
-            // Polymorphism at work #1: an Audi, BMW, Porsche
-            // can all be used wherever a Car is expected. No cast is 
-            // required because an implicit coversion exists from a derived 
-            // class to its base class.
-            List<Car> cars = new List<Car>()
+            Shape[] shapes = new Shape[]
             {
-                new BMW("200", "blue", "A4"),
-                new Audi("250", "red" , "M3")
+                new Sphere(3),
+                new Cube(4)
             };
-            foreach(Car car in cars)
+            foreach(Shape shape in shapes)
             {
-                car.Repair();
+                shape.GetInfo();
+
+                Cube cube = shape as Cube;
+                if (cube == null)
+                {
+                    Console.WriteLine("This shape is no cube");
+                }
+
+                if (shape is Cube)
+                {
+                    Console.WriteLine("This is a cube!");
+                }
             }
 
-            Car bmw = cars[0];
-            Car audi = cars[1];
-
-            bmw.SetCarIDInfo(1234, "Phuong");
-            audi.SetCarIDInfo(4567, "Khang");
-            bmw.GetCarIDInfo();
-            audi.GetCarIDInfo();
 
 
         }
