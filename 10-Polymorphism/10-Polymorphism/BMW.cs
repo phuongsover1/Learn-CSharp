@@ -21,7 +21,7 @@ namespace _10_polymorphism_
             Console.WriteLine($"HP: {HP}, Color: {Color}, Model: {Model}");
         }
 
-        public override void Repair()
+        public sealed override void Repair()
         {
             Console.WriteLine("BMW was repaired!");
         }
