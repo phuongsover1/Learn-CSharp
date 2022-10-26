@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace _10_polymorphism_
 {
+    // a BMW is a car 
     internal class BMW : Car
     {
         public string Model { get; set; }
         private string brand = "BMW";
+
 
         public BMW(string hp, string color, string model) : base(hp, color)
         {

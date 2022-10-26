@@ -9,6 +9,18 @@ namespace _10_polymorphism_
     {
         public string HP { get; set; }
         public string Color { get; set; }
+        // has a relationship
+        protected CarIDInfo carIDInfo = new CarIDInfo();
+
+        public void SetCarIDInfo(int id, string owner)
+        {
+            carIDInfo.IDNum = id;
+            carIDInfo.Owner = owner;
+        }
+        public void GetCarIDInfo()
+        {
+            Console.WriteLine($"The car has a ID of a {carIDInfo.IDNum} and is owned by {carIDInfo.Owner}");
+        }
 
         public Car(string hp, string color)
         {

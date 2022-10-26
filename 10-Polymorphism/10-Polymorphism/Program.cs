@@ -22,17 +22,13 @@ namespace _10_polymorphism_
                 car.Repair();
             }
 
-            // Polymorphism at work #2: the virtual method Repair is
-            // invoked on each of the derived classes, not the base class.
+            Car bmw = cars[0];
+            Car audi = cars[1];
 
-            //BMW bmw = new BMW("200", "blue", "A3");
-            //bmw.Repair();
-            Audi audi = new Audi("200", "brown", "M2");
-            audi.Repair();
-
-            // use Audi base class method instead of Audi's method
-            Car test = (Car)audi;
-            test.Repair();
+            bmw.SetCarIDInfo(1234, "Phuong");
+            audi.SetCarIDInfo(4567, "Khang");
+            bmw.GetCarIDInfo();
+            audi.GetCarIDInfo();
 
 
         }
