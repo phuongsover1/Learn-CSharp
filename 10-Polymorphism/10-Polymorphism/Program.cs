@@ -7,29 +7,15 @@ namespace _10_polymorphism_
     {
         public static void Main(string[] args)
         {
-            Shape[] shapes = new Shape[]
-            {
-                new Sphere(3),
-                new Cube(4)
-            };
-            foreach(Shape shape in shapes)
-            {
-                shape.GetInfo();
+            // Example 1 - reading Text
+            string text = System.IO.File.ReadAllText(@"D:\C#\LearnC#\10-Polymorphism\10-Polymorphism\TextFile.txt");
+            Console.WriteLine(text);
 
-                Cube cube = shape as Cube;
-                if (cube == null)
-                {
-                    Console.WriteLine("This shape is no cube");
-                }
-
-                if (shape is Cube)
-                {
-                    Console.WriteLine("This is a cube!");
-                }
+            string[] lines = System.IO.File.ReadAllLines(@"D:\C#\LearnC#\10-Polymorphism\10-Polymorphism\TextFile.txt");
+            foreach(string line in lines)
+            {
+                Console.WriteLine(line);
             }
-
-
-
         }
     }
 }
