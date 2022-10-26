@@ -6,16 +6,13 @@ namespace _11_advance_topics
 
         public static void Main(string[] args)
         {
-            Day fr = Day.Fri;
-            Day su = Day.Sun;
-
-            Day a = Day.Fri;
-            if (a == fr)
+            Random dice = new Random();
+            int numEyes;
+            for(int i = 0; i < 10; ++i)
             {
-                Console.WriteLine("Equal!");
+                numEyes = dice.Next(1,7);
+                Console.WriteLine(numEyes);
             }
-            // print the int value
-            Console.WriteLine((int)Day.Fri);
         }
     }
 }
