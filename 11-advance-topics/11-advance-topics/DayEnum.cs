@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace _11_advance_topics
 {
-    enum Day { Mon,Tue,Wed,Thu,Fri,Sat,Sun}
+    enum Day { Mon = 1,Tue,Wed,Thu,Fri,Sat,Sun}
 }
