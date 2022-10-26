@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace _10_polymorphism_
 {
@@ -7,15 +8,10 @@ namespace _10_polymorphism_
     {
         public static void Main(string[] args)
         {
-            // Example 1 - reading Text
-            string text = System.IO.File.ReadAllText(@"D:\C#\LearnC#\10-Polymorphism\10-Polymorphism\TextFile.txt");
-            Console.WriteLine(text);
+            string[] lines = { "first line", "second line", "third line" };
+            File.WriteAllLines(@"D:\C#\LearnC#\10-Polymorphism\10-Polymorphism\TextFileWrite.txt", lines);
 
-            string[] lines = System.IO.File.ReadAllLines(@"D:\C#\LearnC#\10-Polymorphism\10-Polymorphism\TextFile.txt");
-            foreach(string line in lines)
-            {
-                Console.WriteLine(line);
-            }
+            
         }
     }
 }
