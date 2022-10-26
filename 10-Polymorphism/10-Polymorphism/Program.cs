@@ -8,10 +8,14 @@ namespace _10_polymorphism_
     {
         public static void Main(string[] args)
         {
-            string[] lines = { "first line", "second line", "third line" };
+            string[] lines = { "250", "240", "242" };
             File.WriteAllLines(@"D:\C#\LearnC#\10-Polymorphism\10-Polymorphism\TextFileWrite.txt", lines);
 
-            
+            string[] highScores = File.ReadAllLines(@"D:\C#\LearnC#\10-Polymorphism\10-Polymorphism\TextFileWrite.txt");
+            foreach(string score in highScores)
+            {
+                Console.WriteLine(score);
+            }
         }
     }
 }
