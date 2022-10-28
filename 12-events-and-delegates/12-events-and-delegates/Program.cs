@@ -32,8 +32,9 @@ namespace _12_events_and_delegates
 
             // passing anonymous callback as a argument of method
             DisplayPeople("All people", people, delegate (Person p) { return true; });
-                
 
+            string searchKeyword = "A";
+            DisplayPeople("age > 20 with search keyword:", people, p => p.Age > 20 && p.Name.Contains(searchKeyword));
 
         }
 
@@ -46,7 +47,7 @@ namespace _12_events_and_delegates
             // print the title
             Console.WriteLine(title);
 
-            foreach(Person p in people)
+            foreach (Person p in people)
             {
                 // check if this person passes the filter
                 if (filter(p))
