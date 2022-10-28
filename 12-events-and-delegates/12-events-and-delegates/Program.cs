@@ -19,6 +19,19 @@ namespace _12_events_and_delegates
             DisplayPeople("Kids", people, IsMinor);
             DisplayPeople("Adults", people, IsAdult);
 
+
+            // here we created a new variable called filter of type FilterDelegate.
+            // then we assigned an anonymous method to it instead of an already defined method
+            FilterDelegate filter = delegate (Person p)
+            {
+                return p.Age >= 20 && p.Age <= 30;
+            }; // don't forget the ; at the end because we are declaring a variable
+               // and assigning it's value at the same time just like int x = 3; for example
+
+            DisplayPeople("Between 20 and 30:", people, filter);
+
+            // passing anonymous callback as a argument of method
+            DisplayPeople("All people", people, delegate (Person p) { return true; });
                 
 
 
