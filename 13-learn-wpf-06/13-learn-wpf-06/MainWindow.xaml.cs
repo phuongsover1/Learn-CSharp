@@ -23,6 +23,10 @@ namespace _13_learn_wpf_06
         public MainWindow()
         {
             InitializeComponent();
-        }
+
+
+            MySlider.Value = 30;
+            MyTextBox.Text = MySlider.Value.ToString();
+        } 
     }
 }
