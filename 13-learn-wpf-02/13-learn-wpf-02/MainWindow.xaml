@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_13_learn_wpf_02"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="422" Width="922">
 
     <StackPanel>
         <TextBlock Text="Hello World!" HorizontalAlignment="Center" Margin="30"/>
@@ -15,5 +15,7 @@
             <ListBoxItem Content="Item 2"/>
             <ListBoxItem Content="Item 3"/>
         </ListBox>
+
+        <Button Content="Click me!" Width="100" Margin="0,30,0,0" Click="Button_Click"/>
     </StackPanel>
 </Window>

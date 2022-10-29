@@ -49,5 +49,10 @@ namespace _13_learn_wpf_02
 
             //stackPanel.Children.Add(list);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Thanks for clicking me!");
+        }
     }
 }
