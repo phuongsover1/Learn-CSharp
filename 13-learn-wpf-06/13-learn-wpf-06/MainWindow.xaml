@@ -15,7 +15,7 @@
     -->
     <StackPanel>
         <!-- TextBox is the targer -->
-        <TextBox Name="MyTextBox" Text="{Binding ElementName=MySlider, Path=Value, Mode=OneTime}" Width="100" Margin="50" ></TextBox>
+        <TextBox Name="MyTextBox" Text="{Binding ElementName=MySlider, Path=Value, Mode=OneWayToSource}" Width="100" Margin="50" ></TextBox>
 
         <!-- Slider is the binding source -->
         <Slider IsSnapToTickEnabled="True" Name="MySlider" Minimum="0" Maximum="100"/>
