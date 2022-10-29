@@ -30,5 +30,30 @@ namespace _13_learn_wpf_03
             // the event of the button is directly called by the click property
             MessageBox.Show("Buton was clicked - Direct event");
         }
+
+        private void Button_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Mouse button went up / was released");
+        }
+
+        private void Grid_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("MouseUp event on grid");
+        }
+
+        private void Button_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("hello");
+        }
+
+        private void Grid_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("PreviewMouseUp on grid - Tunneling");
+        }
+
+        private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("PreviewMouseUp on button - Tunneling");
+        }
     }
 }

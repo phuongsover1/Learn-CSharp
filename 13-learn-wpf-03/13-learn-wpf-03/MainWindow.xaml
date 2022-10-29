@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:_13_learn_wpf_03"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Click Me" Click="Button_Click" Width="150" Height="100"/>
+    <Grid MouseUp="Grid_MouseUp"  >
+        <Button Content="Click Me" MouseUp="Button_MouseUp"  Width="150" Height="100"/>
     </Grid>
+
 </Window>
