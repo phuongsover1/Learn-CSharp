@@ -6,4 +6,14 @@
         xmlns:local="clr-namespace:_13_learn_wpf_02"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <StackPanel>
+        <TextBlock Text="Hello World!" HorizontalAlignment="Center" Margin="30"/>
+
+        <ListBox Height="100" Width="100">
+            <ListBoxItem Content="Item 1"/>
+            <ListBoxItem Content="Item 2"/>
+            <ListBoxItem Content="Item 3"/>
+        </ListBox>
+    </StackPanel>
 </Window>

@@ -23,31 +23,31 @@ namespace _13_learn_wpf_02
         public MainWindow()
         {
             InitializeComponent();
-            StackPanel stackPanel = new StackPanel();
-            this.AddChild(stackPanel);
+            //StackPanel stackPanel = new StackPanel();
+            //this.AddChild(stackPanel); 
 
-            TextBlock txt = new TextBlock();
-            txt.Text = "Hello World!";
-            txt.HorizontalAlignment = HorizontalAlignment.Center;
+            //TextBlock txt = new TextBlock();
+            //txt.Text = "Hello World!";
+            //txt.HorizontalAlignment = HorizontalAlignment.Center;
 
-            txt.Margin = new Thickness(30);
-            txt.Background = Brushes.AliceBlue;
+            //txt.Margin = new Thickness(30);
+            //txt.Background = Brushes.AliceBlue;
 
-            stackPanel.Children.Add(txt);
+            //stackPanel.Children.Add(txt);
 
-            ListBox list = new ListBox();
-            list.Height = 100;
-            list.Width = 100;
+            //ListBox list = new ListBox();
+            //list.Height = 100;
+            //list.Width = 100;
 
 
-            for (int i = 0; i < 3; i++)
-            {
-                ListBoxItem listItem = new ListBoxItem();
-                listItem.Content = $"Item {i + 1}";
-                list.Items.Add(listItem);
-            }
+            //for(int i = 0; i < 3; i++)
+            //{
+            //    ListBoxItem listItem = new ListBoxItem();
+            //    listItem.Content = $"Item {i + 1}";
+            //    list.Items.Add(listItem);
+            //}
 
-            stackPanel.Children.Add(list);
+            //stackPanel.Children.Add(list);
         }
     }
 }
