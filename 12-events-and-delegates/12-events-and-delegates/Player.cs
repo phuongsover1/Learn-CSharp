@@ -13,6 +13,9 @@ namespace _12_events_and_delegates
         public Player(string playerName)
         {
             PlayerName = playerName;
+            //subscribe to the OnGameStart and OnGameOver events.
+            GameEventManager.OnGameStart += StartGame;
+            GameEventManager.OnGameOver += GameOver;
         }  
 
         // at the start of the game, spawn the player.

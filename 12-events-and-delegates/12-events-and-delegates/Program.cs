@@ -15,26 +15,13 @@ namespace _12_events_and_delegates
             Player player1 = new Player("SteelCow");
             Player player2 = new Player("DoggoSilva");
 
-            // start the audio system and the rendering engine
-            audioSystem.StartGame();
-            engine.StartGame();
+            GameEventManager.TriggerGameStart();
 
-            // spawn the players
-            player1.StartGame();
-            player2.StartGame();
-
-            Console.WriteLine("Game is Running ... Press any key to end the game.");
-
-            // pause the game
+            Console.WriteLine("Game is Running ... press any key to end the game.");
+            // pause
             Console.Read();
 
-            // shutdown the rendering engine and audio system
-            audioSystem.GameOver();
-            engine.GameOver();
-
-            // remove the players
-            player1.GameOver();
-            player2.GameOver();
+            GameEventManager.TriggerGameOver();
 
         }
 

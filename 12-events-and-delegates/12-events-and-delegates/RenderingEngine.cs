@@ -8,16 +8,22 @@ namespace _12_events_and_delegates
 {
     public class RenderingEngine
     {
+        // simple constructor
+        public RenderingEngine()
+        {
+            GameEventManager.OnGameStart += StartGame;
+            GameEventManager.OnGameOver += GameOver;
+        }
         // at the start of the game,
         // we want to enable the rendering engine and start drawing the visuals
-        public void StartGame()
+        private void StartGame()
         {
             Console.WriteLine("Rendering Engine Started");
             Console.WriteLine("Drawing Visual...");
         }
 
         // when the game is over, we want to stop our rendering engine
-        public void GameOver()
+        private void GameOver()
         {
             Console.WriteLine("Rendering Engine Stopped");
         }
