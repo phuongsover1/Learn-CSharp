@@ -11,7 +11,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="lbMatches" HorizontalContentAlignment="Stretch">
+        <ListBox Grid.Column="0" Name="lbMatches" HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -31,5 +31,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Grid.Column="1" Content="Show Selected" Click="Button_Click"/>
     </Grid>
 </Window>
