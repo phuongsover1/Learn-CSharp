@@ -13,6 +13,7 @@
                     <StackPanel Orientation="Horizontal">
                         <Rectangle Fill="{Binding Name}" Width="32" Margin="5"/>
                         <TextBlock Text="{Binding Name}" FontSize="32"/>
+                        <Image Source="D:\Cursor_Styles\avatar.jpg" Height="50" Width="50"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
