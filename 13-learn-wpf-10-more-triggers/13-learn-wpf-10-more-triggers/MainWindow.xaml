@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock Text="Hello, beloved World!" Height="50" VerticalAlignment="Top" FontSize="32" HorizontalAlignment="Center"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Hello, beloved World!" Grid.Row="0" Height="50" VerticalAlignment="Top" FontSize="32" HorizontalAlignment="Center"
                    >
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
@@ -21,5 +26,49 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
+        <TextBlock Text="Hello buddy" FontSize="24" Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.5" Storyboard.TargetProperty="FontSize" To="72"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.5" Storyboard.TargetProperty="FontSize" To="32"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style> 
+        </TextBlock>
+        <StackPanel Grid.Row="2">
+
+            <CheckBox Content="Is someone there?" HorizontalAlignment="Center" Name="helloCB"/>
+            <TextBlock HorizontalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Text" Value="No"/>
+                        <Setter Property="Foreground" Value="Red"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=helloCB, Path=IsChecked}" Value="True">
+                                <Setter Property="Text" Value="Of Course"/>
+                                <Setter Property="Foreground" Value="Green"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Window>
