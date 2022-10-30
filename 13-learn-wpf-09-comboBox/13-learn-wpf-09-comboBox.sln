@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-learn-wpf-09-comboBox", "13-learn-wpf-09-comboBox\13-learn-wpf-09-comboBox.csproj", "{FCA7FB96-2E9E-4166-A2F9-B7A158C65061}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCA7FB96-2E9E-4166-A2F9-B7A158C65061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA7FB96-2E9E-4166-A2F9-B7A158C65061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA7FB96-2E9E-4166-A2F9-B7A158C65061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA7FB96-2E9E-4166-A2F9-B7A158C65061}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94CB92FC-CB33-4FDF-822B-42D6CD4C81CF}
+	EndGlobalSection
+EndGlobal
