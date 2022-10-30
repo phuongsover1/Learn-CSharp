@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14-wpf-zoo-managers", "14-wpf-zoo-managers\14-wpf-zoo-managers.csproj", "{BCE14A64-1F0E-4B58-AAC7-62E50172DCA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCE14A64-1F0E-4B58-AAC7-62E50172DCA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE14A64-1F0E-4B58-AAC7-62E50172DCA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE14A64-1F0E-4B58-AAC7-62E50172DCA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE14A64-1F0E-4B58-AAC7-62E50172DCA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BAF1B82-A9CC-4AC2-84E5-4A1A4FB3B020}
+	EndGlobalSection
+EndGlobal
