@@ -28,11 +28,11 @@ namespace _15_learn_linq_02_linq_with_lists
         public void MaleStudents()
         {
             IEnumerable<Student> maleStudents = from student in students
-                                               where student.Gender.Equals("male")
-                                               select student;
+                                                where student.Gender.Equals("male")
+                                                select student;
 
             Console.WriteLine("Male student:");
-            foreach(Student student in maleStudents)
+            foreach (Student student in maleStudents)
             {
                 Console.WriteLine(student);
             }
@@ -45,7 +45,7 @@ namespace _15_learn_linq_02_linq_with_lists
                                                   select student;
 
             Console.WriteLine("Female student:");
-            foreach(Student student in femaleStudents)
+            foreach (Student student in femaleStudents)
             {
                 Console.WriteLine(student);
             }
@@ -73,11 +73,29 @@ namespace _15_learn_linq_02_linq_with_lists
                                                        select student;
 
             Console.WriteLine("=== All Students From Beijing Tech ====");
-            foreach(Student student in beijingTechStudents)
+            foreach (Student student in beijingTechStudents)
             {
                 Console.WriteLine(student);
             }
+
         }
+
+        public void StudentWithId(int id)
+        {
+            IEnumerable<Student> studentList = from student in students
+                                           where student.Id == id
+                                           select student;
+
+            if (studentList.Count() != 0)
+            {
+                Console.WriteLine(studentList.ElementAt(0));
+            }
+            else
+            {
+                Console.WriteLine("Student with ID {0} is not exist.", id);
+            }
+        }
+
 
 
 
