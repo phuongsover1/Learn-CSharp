@@ -66,15 +66,14 @@ namespace _14_wpf_zoo_managers
         {
         }
 
-        private void listZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void showAssociatedAnimals(string idZoo)
         {
 
-            string idZoo = listZoos.SelectedValue.ToString();
-
+            // get the associated animals from zoo with idZoo
             string query = String.Format("select a.Id, a.Name from (select ZooId,AnimalId from Zoo_Animal) za, Animal a where za.ZooId = {0} and za.AnimalId = a.Id;", idZoo);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
 
-           try
+            try
             {
                 using (sqlDataAdapter)
                 {
@@ -87,13 +86,42 @@ namespace _14_wpf_zoo_managers
                     listAssociatedAnimals.ItemsSource = associatedAnimalsTable.DefaultView;
 
                 }
-            } catch(Exception error)
+            }
+            catch (Exception error)
             {
                 MessageBox.Show(error.ToString());
             }
+        }
 
+        private void showAvailableAnimalsToAddToTheZoo(string idZoo)
+        {
+            // get the available animal to add to the zoo
+            string query = String.Format("select * from Animal a Where a.Id NOT IN (select AnimalId from Zoo_Animal where ZooId = {0})", idZoo);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
 
+            try
+            {
+                using (sqlDataAdapter)
+                {
+                    DataTable availableAnimalsTable = new DataTable();
+                    sqlDataAdapter.Fill(availableAnimalsTable);
 
+                    listAvailableAnimals.DisplayMemberPath = "Name";
+                    listAvailableAnimals.SelectedValuePath = "Id";
+                    listAvailableAnimals.ItemsSource = availableAnimalsTable.DefaultView;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+        }
+        private void listZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            string idZoo = listZoos.SelectedValue.ToString();
+            showAssociatedAnimals(idZoo);
+            showAvailableAnimalsToAddToTheZoo(idZoo);
         }
     }
 }
