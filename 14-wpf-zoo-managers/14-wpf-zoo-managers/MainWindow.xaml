@@ -51,7 +51,7 @@
         </ListBox>
         <ListBox Name="listAvailableAnimals" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4">
         </ListBox>
-        <Button Grid.Row="2" Grid.Column="0" Content="Delete Zoo" HorizontalContentAlignment="Center"/>
+        <Button Name="btnDeleteZoo" Click="DeleteZoo_Click" Grid.Row="2" Grid.Column="0" Content="Delete Zoo" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Remove Animal" HorizontalContentAlignment="Center"/>
         <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
         <Button Grid.Row="4" Grid.Column="0" Content="Add Zoo" HorizontalContentAlignment="Center"/>

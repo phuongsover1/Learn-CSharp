@@ -127,9 +127,31 @@ namespace _14_wpf_zoo_managers
         private void listZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            string idZoo = listZoos.SelectedValue.ToString();
             showAssociatedAnimals();
             showAvailableAnimalsToAddToTheZoo();
+        }
+
+        private void DeleteZoo_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "delete from Zoo where Zoo.Id = @ZooId";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand.ExecuteScalar();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            } finally
+            {
+                sqlConnection.Close();
+
+                ShowZoos();
+            }
+            
+
         }
     }
 }
