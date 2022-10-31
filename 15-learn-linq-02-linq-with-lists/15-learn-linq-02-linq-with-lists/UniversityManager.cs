@@ -51,6 +51,19 @@ namespace _15_learn_linq_02_linq_with_lists
             }
         }
 
+        public void SortStudentsByAge()
+        {
+            IEnumerable<Student> sortedStudents = from student in students
+                                                  orderby student.Age
+                                                  select student;
+
+            Console.WriteLine("Students sorted by Age:");
+            foreach (Student student in sortedStudents)
+            {
+                Console.WriteLine(student);
+            }
+        }
+
 
 
     }

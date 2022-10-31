@@ -15,6 +15,8 @@ namespace _15_learn_linq_02_linq_with_lists
             universityManager.MaleStudents();
             universityManager.FemaleStudents();
 
+            universityManager.SortStudentsByAge();
+
             Console.Read();
         }
     }
