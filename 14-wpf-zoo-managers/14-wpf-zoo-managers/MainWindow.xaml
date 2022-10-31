@@ -45,11 +45,11 @@
         <TextBlock Text="Zoos" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
         <TextBlock Text="Associated Animals" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
         <Button Grid.Row="0" Grid.Column="2" Content="Add Animal to Zoo" HorizontalContentAlignment="Center"/>
-        <ListBox Grid.Row="1" Grid.Column="0" Name="listZoos">
+        <ListBox Grid.Row="1" Grid.Column="0" Name="listZoos" SelectionChanged="listZoos_SelectionChanged">
         </ListBox>
-        <ListBox Grid.Row="1" Grid.Column="1">
+        <ListBox Name="listAssociatedAnimals" SelectionChanged="lbAssociatedAnimals_SelectionChanged"  Grid.Row="1" Grid.Column="1">
         </ListBox>
-        <ListBox Grid.Row="1" Grid.Column="2" Grid.RowSpan="4">
+        <ListBox Name="listAvailableAnimals" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4">
         </ListBox>
         <Button Grid.Row="2" Grid.Column="0" Content="Delete Zoo" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Remove Animal" HorizontalContentAlignment="Center"/>

@@ -61,5 +61,39 @@ namespace _14_wpf_zoo_managers
                 MessageBox.Show(e.ToString());
             }
         }
+
+        private void lbAssociatedAnimals_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
+
+        private void listZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            string idZoo = listZoos.SelectedValue.ToString();
+
+            string query = String.Format("select a.Id, a.Name from (select ZooId,AnimalId from Zoo_Animal) za, Animal a where za.ZooId = {0} and za.AnimalId = a.Id;", idZoo);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+           try
+            {
+                using (sqlDataAdapter)
+                {
+                    DataTable associatedAnimalsTable = new DataTable();
+                    sqlDataAdapter.Fill(associatedAnimalsTable);
+
+
+                    listAssociatedAnimals.DisplayMemberPath = "Name";
+                    listAssociatedAnimals.SelectedValuePath = "Id";
+                    listAssociatedAnimals.ItemsSource = associatedAnimalsTable.DefaultView;
+
+                }
+            } catch(Exception error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+
+
+
+        }
     }
 }
