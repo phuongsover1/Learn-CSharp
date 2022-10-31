@@ -35,23 +35,30 @@ namespace _14_wpf_zoo_managers
 
         private void ShowZoos()
         {
-            string query = "select * from Zoo";
-            // the SqlDAtaAdapter can be imageined like an Interface to make Tables usable by C#-Objects
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
-
-            using (sqlDataAdapter)
+            try
             {
-                DataTable zooTable = new DataTable();
-                sqlDataAdapter.Fill(zooTable);
+                string query = "select * from Zoo";
+                // the SqlDAtaAdapter can be imageined like an Interface to make Tables usable by C#-Objects
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+                using (sqlDataAdapter)
+                {
+                    DataTable zooTable = new DataTable();
+                    sqlDataAdapter.Fill(zooTable);
 
 
-                // Which Information of the Table in DataTable should be shown in our ListBox?
-                listZoos.DisplayMemberPath = "Location";
-                // Which Value should be delivered, when an Item from our ListBox is selected?
-                listZoos.SelectedValuePath = "Id";
-                // The Reference to the Data in the ListBox should populate
-                listZoos.ItemsSource = zooTable.DefaultView;
+                    // Which Information of the Table in DataTable should be shown in our ListBox?
+                    listZoos.DisplayMemberPath = "Location";
+                    // Which Value should be delivered, when an Item from our ListBox is selected?
+                    listZoos.SelectedValuePath = "Id";
+                    // The Reference to the Data in the ListBox should populate
+                    listZoos.ItemsSource = zooTable.DefaultView;
 
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
             }
         }
     }
