@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-learn-linq-02-xml", "15-learn-linq-02-xml\15-learn-linq-02-xml.csproj", "{907DF891-E3B3-4FB1-AF52-CD15EF8B2B7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{907DF891-E3B3-4FB1-AF52-CD15EF8B2B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{907DF891-E3B3-4FB1-AF52-CD15EF8B2B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{907DF891-E3B3-4FB1-AF52-CD15EF8B2B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{907DF891-E3B3-4FB1-AF52-CD15EF8B2B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10EBDFC2-89F7-4556-B52E-AE55EA5C764D}
+	EndGlobalSection
+EndGlobal
