@@ -144,14 +144,54 @@ namespace _14_wpf_zoo_managers
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            } finally
+            }
+            finally
             {
                 sqlConnection.Close();
-
                 ShowZoos();
             }
-            
+        }
 
+        private void AddZoo_Click(object sender, RoutedEventArgs e)
+        {
+            string trimText = textBox.Text.Trim();
+            if (trimText != "")
+            {
+                string query = "insert Zoo(Location) values(@Location)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@Location", trimText);
+
+                try
+                {
+                    sqlConnection.Open();
+                    sqlCommand.ExecuteScalar();
+                } catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                } finally
+                {
+                    sqlConnection.Close();
+                    ShowZoos();
+                }
+            }
+        }
+
+        private void UpdateZoo_Click(object sender, RoutedEventArgs e)
+        {
+            string trimText = textBox.Text.Trim();
+            if (trimText != "")
+            {
+                string query = "update Zoo set location = @Location where Zoo.Id = @ZooId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+                try
+                {
+                    sqlConnection.Open();
+
+                }
+
+
+            }
         }
     }
 }

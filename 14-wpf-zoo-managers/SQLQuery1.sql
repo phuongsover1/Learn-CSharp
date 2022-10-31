@@ -12,4 +12,8 @@
 --add constraint FK_ZooAnimal_Animal foreign key (AnimalId) references Animal(Id) on delete cascade
 
 --delete from Zoo where Zoo.Id = ?
-select * from Zoo_Animal
+--select * from Zoo_Animal
+insert Zoo(Location)
+values ('Tokyo')
+
+select * from Zoo

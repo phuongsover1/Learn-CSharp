@@ -53,8 +53,8 @@
         </ListBox>
         <Button Name="btnDeleteZoo" Click="DeleteZoo_Click" Grid.Row="2" Grid.Column="0" Content="Delete Zoo" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Remove Animal" HorizontalContentAlignment="Center"/>
-        <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Button Grid.Row="4" Grid.Column="0" Content="Add Zoo" HorizontalContentAlignment="Center"/>
+        <TextBox Name="textBox" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button Name="btnAddZoo" Click="AddZoo_Click" Grid.Row="4" Grid.Column="0" Content="Add Zoo" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="4" Grid.Column="1" Content="Add Animal" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="5" Grid.Column="0" Content="Update Zoo" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="5" Grid.Column="1" Content="Update Animal" HorizontalContentAlignment="Center"/>
