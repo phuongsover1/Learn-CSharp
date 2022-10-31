@@ -30,6 +30,7 @@ namespace _14_wpf_zoo_managers
 
             string connectionString = ConfigurationManager.ConnectionStrings["_14_wpf_zoo_managers.Properties.Settings.wpf_zooConnectionString"].ConnectionString;
             sqlConnection = new SqlConnection(connectionString);
+            ShowZoos();
         }
 
         private void ShowZoos()
@@ -42,6 +43,15 @@ namespace _14_wpf_zoo_managers
             {
                 DataTable zooTable = new DataTable();
                 sqlDataAdapter.Fill(zooTable);
+
+
+                // Which Information of the Table in DataTable should be shown in our ListBox?
+                listZoos.DisplayMemberPath = "Location";
+                // Which Value should be delivered, when an Item from our ListBox is selected?
+                listZoos.SelectedValuePath = "Id";
+                // The Reference to the Data in the ListBox should populate
+                listZoos.ItemsSource = zooTable.DefaultView;
+
             }
         }
     }

@@ -45,12 +45,7 @@
         <TextBlock Text="Zoos" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
         <TextBlock Text="Associated Animals" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
         <Button Grid.Row="0" Grid.Column="2" Content="Add Animal to Zoo" HorizontalContentAlignment="Center"/>
-        <ListBox Grid.Row="1" Grid.Column="0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Location}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
+        <ListBox Grid.Row="1" Grid.Column="0" Name="listZoos">
         </ListBox>
         <ListBox Grid.Row="1" Grid.Column="1">
         </ListBox>
