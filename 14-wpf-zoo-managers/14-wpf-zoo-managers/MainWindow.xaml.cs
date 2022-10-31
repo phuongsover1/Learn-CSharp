@@ -66,12 +66,17 @@ namespace _14_wpf_zoo_managers
         {
         }
 
-        private void showAssociatedAnimals(string idZoo)
+        private void showAssociatedAnimals()
         {
 
             // get the associated animals from zoo with idZoo
-            string query = String.Format("select a.Id, a.Name from (select ZooId,AnimalId from Zoo_Animal) za, Animal a where za.ZooId = {0} and za.AnimalId = a.Id;", idZoo);
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+            string query = "select a.Id, a.Name from (select ZooId,AnimalId from Zoo_Animal) za, Animal a where za.ZooId = @ZooId and za.AnimalId = a.Id;";
+
+            // if we declare a variable in query, we should use SqlCommand to set the value into that variable
+            SqlCommand sqlCommand = new SqlCommand(query,sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
 
             try
             {
@@ -93,11 +98,14 @@ namespace _14_wpf_zoo_managers
             }
         }
 
-        private void showAvailableAnimalsToAddToTheZoo(string idZoo)
+        private void showAvailableAnimalsToAddToTheZoo()
         {
             // get the available animal to add to the zoo
-            string query = String.Format("select * from Animal a Where a.Id NOT IN (select AnimalId from Zoo_Animal where ZooId = {0})", idZoo);
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+            string query = "select * from Animal a Where a.Id NOT IN (select AnimalId from Zoo_Animal where ZooId = @ZooId)";
+
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
 
             try
             {
@@ -120,8 +128,8 @@ namespace _14_wpf_zoo_managers
         {
 
             string idZoo = listZoos.SelectedValue.ToString();
-            showAssociatedAnimals(idZoo);
-            showAvailableAnimalsToAddToTheZoo(idZoo);
+            showAssociatedAnimals();
+            showAvailableAnimalsToAddToTheZoo();
         }
     }
 }
