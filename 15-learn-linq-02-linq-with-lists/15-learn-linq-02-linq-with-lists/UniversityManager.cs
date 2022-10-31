@@ -83,8 +83,8 @@ namespace _15_learn_linq_02_linq_with_lists
         public void StudentWithId(int id)
         {
             IEnumerable<Student> studentList = from student in students
-                                           where student.Id == id
-                                           select student;
+                                               where student.Id == id
+                                               select student;
 
             if (studentList.Count() != 0)
             {
@@ -94,6 +94,32 @@ namespace _15_learn_linq_02_linq_with_lists
             {
                 Console.WriteLine("Student with ID {0} is not exist.", id);
             }
+        }
+
+        public void AllStudentsFromThatUni(int id)
+        {
+            IEnumerable<University> universityWithId = from university in universities
+                                                       where university.Id == id
+                                                       select university;
+            if (universityWithId.Count() != 0)
+            {
+                IEnumerable<Student> studentsFromUni = from student in students
+                                                       join university in universities
+                                                       on student.UniversityId equals university.Id
+                                                       where university.Id == id
+                                                       select student;
+
+                Console.WriteLine("==== All the students in university with ID {0} ====", id);
+                foreach(Student student in studentsFromUni)
+                {
+                    Console.WriteLine(student);
+                }
+            } else
+            {
+                Console.WriteLine($"University with Id {id} is not exist.");
+            }
+
+
         }
 
 
