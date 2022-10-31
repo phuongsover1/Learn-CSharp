@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace _14_wpf_zoo_managers
 {
@@ -36,6 +37,12 @@ namespace _14_wpf_zoo_managers
             string query = "select * from Zoo";
             // the SqlDAtaAdapter can be imageined like an Interface to make Tables usable by C#-Objects
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+            using (sqlDataAdapter)
+            {
+                DataTable zooTable = new DataTable();
+                sqlDataAdapter.Fill(zooTable);
+            }
         }
     }
 }
