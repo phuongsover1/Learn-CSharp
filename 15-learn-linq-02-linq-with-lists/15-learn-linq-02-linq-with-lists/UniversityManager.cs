@@ -64,6 +64,21 @@ namespace _15_learn_linq_02_linq_with_lists
             }
         }
 
+        public void AllStudentsFromBeijingTech()
+        {
+            IEnumerable<Student> beijingTechStudents = from student in students
+                                                       join university in universities
+                                                       on student.UniversityId equals university.Id
+                                                       where university.Name.Equals("Beijing Tech")
+                                                       select student;
+
+            Console.WriteLine("=== All Students From Beijing Tech ====");
+            foreach(Student student in beijingTechStudents)
+            {
+                Console.WriteLine(student);
+            }
+        }
+
 
 
     }

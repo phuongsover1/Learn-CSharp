@@ -17,6 +17,8 @@ namespace _15_learn_linq_02_linq_with_lists
 
             universityManager.SortStudentsByAge();
 
+            universityManager.AllStudentsFromBeijingTech();
+
             Console.Read();
         }
     }
