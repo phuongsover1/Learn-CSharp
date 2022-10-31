@@ -1,0 +1,2 @@
+﻿select location from Zoo
+

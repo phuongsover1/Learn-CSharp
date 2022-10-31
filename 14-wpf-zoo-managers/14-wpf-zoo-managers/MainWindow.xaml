@@ -5,8 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_14_wpf_zoo_managers"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="600" Width="800">
+    <Grid Margin="20" RenderTransformOrigin="0.5,0.5"  >
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="5,0,5,5"/>
+            </Style>
+            <Style TargetType="{x:Type ListBox}">
+                <Setter Property="Margin" Value="5,0,5,5"/>
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="5,0,5,5"/>
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="5,0,5,5"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.063"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Zoos" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBlock Text="Associated Animals" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+        <Button Grid.Row="0" Grid.Column="2" Content="Add Animal to Zoo" HorizontalContentAlignment="Center"/>
+        <ListBox Grid.Row="1" Grid.Column="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Location}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Grid.Row="1" Grid.Column="1">
+        </ListBox>
+        <ListBox Grid.Row="1" Grid.Column="2" Grid.RowSpan="4">
+        </ListBox>
+        <Button Grid.Row="2" Grid.Column="0" Content="Delete Zoo" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="Remove Animal" HorizontalContentAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button Grid.Row="4" Grid.Column="0" Content="Add Zoo" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="4" Grid.Column="1" Content="Add Animal" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="Update Zoo" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="Update Animal" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="2" Content="Delete Animal" HorizontalContentAlignment="Center"/>
     </Grid>
 </Window>
