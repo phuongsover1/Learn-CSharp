@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -118,13 +119,21 @@ namespace _15_learn_linq_02_linq_with_lists
             {
                 Console.WriteLine($"University with Id {id} is not exist.");
             }
-
-
         }
 
+        public void StudentAndUniversityCollection()
+        {
+            var newCollection = from student in students
+                                join university in universities
+                                on student.UniversityId equals university.Id
+                                select new { StudentName = student.Name, UniversityName = university.Name };
 
-
-
+            Console.WriteLine("==== New Collection ====");
+            foreach(var item in newCollection)
+            {
+                Console.WriteLine("Student {0} from University {1}", item.StudentName,item.UniversityName);
+            }
+        }
     }
 
 }

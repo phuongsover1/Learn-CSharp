@@ -32,16 +32,18 @@ namespace _15_learn_linq_02_linq_with_lists
             //}
 
             // get all student from uni with id
-            Console.Write("Id of the university you want to get all the students: ");
-            bool res = int.TryParse(Console.ReadLine(), out int id);
-            if (res)
-            {
-                universityManager.AllStudentsFromThatUni(id);
-            } else
-            {
-                Console.WriteLine("Please enter a valid id next time.");
-                
-            }
+            //Console.Write("Id of the university you want to get all the students: ");
+            //bool res = int.TryParse(Console.ReadLine(), out int id);
+            //if (res)
+            //{
+            //    universityManager.AllStudentsFromThatUni(id);
+            //} else
+            //{
+            //    Console.WriteLine("Please enter a valid id next time.");
+
+            //}
+
+            universityManager.StudentAndUniversityCollection();
 
 
 
