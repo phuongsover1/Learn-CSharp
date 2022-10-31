@@ -58,7 +58,7 @@ namespace _14_wpf_zoo_managers
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                //MessageBox.Show(e.ToString());
             }
         }
 
@@ -73,7 +73,7 @@ namespace _14_wpf_zoo_managers
             string query = "select a.Id, a.Name from (select ZooId,AnimalId from Zoo_Animal) za, Animal a where za.ZooId = @ZooId and za.AnimalId = a.Id;";
 
             // if we declare a variable in query, we should use SqlCommand to set the value into that variable
-            SqlCommand sqlCommand = new SqlCommand(query,sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -94,7 +94,7 @@ namespace _14_wpf_zoo_managers
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.ToString());
+                //MessageBox.Show(error.ToString());
             }
         }
 
@@ -121,7 +121,7 @@ namespace _14_wpf_zoo_managers
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.ToString());
+                //MessageBox.Show(error.ToString());
             }
         }
         private void listZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -141,7 +141,8 @@ namespace _14_wpf_zoo_managers
             {
                 sqlConnection.Open();
                 sqlCommand.ExecuteScalar();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -165,10 +166,12 @@ namespace _14_wpf_zoo_managers
                 {
                     sqlConnection.Open();
                     sqlCommand.ExecuteScalar();
-                } catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-                } finally
+                }
+                finally
                 {
                     sqlConnection.Close();
                     ShowZoos();
@@ -183,11 +186,23 @@ namespace _14_wpf_zoo_managers
             {
                 string query = "update Zoo set location = @Location where Zoo.Id = @ZooId";
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@Location", trimText);
+                sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
 
                 try
                 {
                     sqlConnection.Open();
+                    sqlCommand.ExecuteScalar();
 
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    sqlConnection.Close();
+                    ShowZoos();
                 }
 
 
