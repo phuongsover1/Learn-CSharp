@@ -19,16 +19,19 @@ namespace _15_learn_linq_02_xml
                         <Name>Tonic</Name>
                         <Age>21</Age>
                         <University>Yale</University>
+                        <Semester>3</Semester>
                     </Student>
                     <Student>
                         <Name>Carla</Name>
                         <Age>17</Age>
                         <University>Yale</University>
+                        <Semester>1</Semester>
                     </Student>
                     <Student>
                         <Name>Layla</Name>
                         <Age>19</Age>
                         <University>Beijing Tech</University>
+                        <Semester>2</Semester>
                     </Student>
                 </Students>";
 
