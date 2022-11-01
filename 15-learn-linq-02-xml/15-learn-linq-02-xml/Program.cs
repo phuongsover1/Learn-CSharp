@@ -37,6 +37,8 @@ namespace _15_learn_linq_02_xml
 
             Print_AllStudents(studentsXDoc);
 
+            Print_AllStudentOrderByAge(studentsXDoc);
+
             Console.Read();
         }
 
@@ -55,6 +57,24 @@ namespace _15_learn_linq_02_xml
                 Console.WriteLine("Name: {0}, Age: {1}, University: {2}",student.Name, student.Age, student.University);
             }
 
+        }
+
+        private static void Print_AllStudentOrderByAge(XDocument studentsXDoc)
+        {
+            var studentOrderByAge = from student in studentsXDoc.Descendants("Student")
+                                    orderby student.Element("Age").Value
+                                    select new
+                                    {
+                                        Name = student.Element("Name").Value,
+                                        Age = student.Element("Age").Value,
+                                        University = student.Element("University").Value
+                                    };
+
+            Console.WriteLine("==== Students Order by Age ====");
+            foreach(var student in studentOrderByAge)
+            {
+                Console.WriteLine("Name: {0}, Age: {1}, University: {2}",student.Name, student.Age, student.University);
+            }
         }
     }
 }
