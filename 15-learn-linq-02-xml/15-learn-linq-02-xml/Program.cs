@@ -35,6 +35,13 @@ namespace _15_learn_linq_02_xml
             XDocument studentsXDoc = new XDocument();
             studentsXDoc = XDocument.Parse(studentXML);
 
+            Print_AllStudents(studentsXDoc);
+
+            Console.Read();
+        }
+
+        private static void Print_AllStudents(XDocument studentsXDoc)
+        {
             var students = from student in studentsXDoc.Descendants("Student")
                            select new
                            {
@@ -47,7 +54,7 @@ namespace _15_learn_linq_02_xml
             {
                 Console.WriteLine("Name: {0}, Age: {1}, University: {2}",student.Name, student.Age, student.University);
             }
-            Console.Read();
+
         }
     }
 }
