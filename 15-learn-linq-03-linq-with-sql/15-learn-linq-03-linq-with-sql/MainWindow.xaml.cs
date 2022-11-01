@@ -56,5 +56,12 @@ namespace _15_learn_linq_03_linq_with_sql
 
             DataGrid.ItemsSource = dataContext.Universities;
         }
+
+        private void InsertStudent()
+        {
+            University yale = dataContext.Universities.First(uni => uni.Name.Equals("Yale"));
+
+             
+        }
     }
 }
