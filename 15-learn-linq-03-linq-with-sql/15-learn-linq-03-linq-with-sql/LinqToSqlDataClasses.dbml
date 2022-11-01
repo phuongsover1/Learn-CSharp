@@ -4,7 +4,7 @@
     <Type Name="University">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="University_Student" Member="Students" ThisKey="Id" OtherKey="University" Type="Student" />
+      <Association Name="University_Student" Member="Students" ThisKey="Id" OtherKey="UniversityId" Type="Student" />
     </Type>
   </Table>
   <Table Name="dbo.Student" Member="Students">
@@ -13,8 +13,8 @@
       <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Gender" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="University" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="University_Student" Member="University1" ThisKey="University" OtherKey="Id" Type="University" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Column Name="UniversityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="University_Student" Member="University" ThisKey="UniversityId" OtherKey="Id" Type="University" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
 </Database>

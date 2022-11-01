@@ -153,7 +153,7 @@ namespace _15_learn_linq_03_linq_with_sql
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="University_Student", Storage="_Students", ThisKey="Id", OtherKey="University")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="University_Student", Storage="_Students", ThisKey="Id", OtherKey="UniversityId")]
 		public EntitySet<Student> Students
 		{
 			get
@@ -189,13 +189,13 @@ namespace _15_learn_linq_03_linq_with_sql
 		private void attach_Students(Student entity)
 		{
 			this.SendPropertyChanging();
-			entity.University1 = this;
+			entity.University = this;
 		}
 		
 		private void detach_Students(Student entity)
 		{
 			this.SendPropertyChanging();
-			entity.University1 = null;
+			entity.University = null;
 		}
 	}
 	
@@ -213,9 +213,9 @@ namespace _15_learn_linq_03_linq_with_sql
 		
 		private System.Nullable<int> _Age;
 		
-		private System.Nullable<int> _University;
+		private System.Nullable<int> _UniversityId;
 		
-		private EntityRef<University> _University1;
+		private EntityRef<University> _University;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -229,13 +229,13 @@ namespace _15_learn_linq_03_linq_with_sql
     partial void OnGenderChanged();
     partial void OnAgeChanging(System.Nullable<int> value);
     partial void OnAgeChanged();
-    partial void OnUniversityChanging(System.Nullable<int> value);
-    partial void OnUniversityChanged();
+    partial void OnUniversityIdChanging(System.Nullable<int> value);
+    partial void OnUniversityIdChanged();
     #endregion
 		
 		public Student()
 		{
-			this._University1 = default(EntityRef<University>);
+			this._University = default(EntityRef<University>);
 			OnCreated();
 		}
 		
@@ -319,60 +319,60 @@ namespace _15_learn_linq_03_linq_with_sql
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_University", DbType="Int")]
-		public System.Nullable<int> University
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniversityId", DbType="Int")]
+		public System.Nullable<int> UniversityId
 		{
 			get
 			{
-				return this._University;
+				return this._UniversityId;
 			}
 			set
 			{
-				if ((this._University != value))
+				if ((this._UniversityId != value))
 				{
-					if (this._University1.HasLoadedOrAssignedValue)
+					if (this._University.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnUniversityChanging(value);
+					this.OnUniversityIdChanging(value);
 					this.SendPropertyChanging();
-					this._University = value;
-					this.SendPropertyChanged("University");
-					this.OnUniversityChanged();
+					this._UniversityId = value;
+					this.SendPropertyChanged("UniversityId");
+					this.OnUniversityIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="University_Student", Storage="_University1", ThisKey="University", OtherKey="Id", IsForeignKey=true, DeleteRule="CASCADE")]
-		public University University1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="University_Student", Storage="_University", ThisKey="UniversityId", OtherKey="Id", IsForeignKey=true, DeleteRule="CASCADE")]
+		public University University
 		{
 			get
 			{
-				return this._University1.Entity;
+				return this._University.Entity;
 			}
 			set
 			{
-				University previousValue = this._University1.Entity;
+				University previousValue = this._University.Entity;
 				if (((previousValue != value) 
-							|| (this._University1.HasLoadedOrAssignedValue == false)))
+							|| (this._University.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._University1.Entity = null;
+						this._University.Entity = null;
 						previousValue.Students.Remove(this);
 					}
-					this._University1.Entity = value;
+					this._University.Entity = value;
 					if ((value != null))
 					{
 						value.Students.Add(this);
-						this._University = value.Id;
+						this._UniversityId = value.Id;
 					}
 					else
 					{
-						this._University = default(Nullable<int>);
+						this._UniversityId = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("University1");
+					this.SendPropertyChanged("University");
 				}
 			}
 		}

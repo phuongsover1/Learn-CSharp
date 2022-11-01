@@ -25,4 +25,15 @@
 --	constraint FK_StudentLecture_Lecture foreign key (LectureId) references Lecture(Id) on delete cascade,
 --)
 
+--select * from Student
+
+--exec sp_rename 'Student.University', 'UniversityId', 'COLUMN'
+
+--alter table Student
+--drop constraint FK_Student_University
+
+--alter table Student 
+--add constraint FK_Student_University foreign key (UniversityId) references University(Id) on delete cascade
+
 select * from University
+

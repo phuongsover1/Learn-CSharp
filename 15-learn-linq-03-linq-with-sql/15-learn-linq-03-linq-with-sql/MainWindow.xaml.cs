@@ -34,8 +34,11 @@ namespace _15_learn_linq_03_linq_with_sql
             dataContext = new LinqToSqlDataClassesDataContext(connectionString);
 
             //InsertUniversities("Beijing Tech");
+            //InsertUniversities("Yale");
 
-            DeleteAllUniversities();
+            //DeleteAllUniversities();
+
+            InsertStudent();
         }
 
         private void InsertUniversities(string name)
@@ -60,7 +63,20 @@ namespace _15_learn_linq_03_linq_with_sql
         private void InsertStudent()
         {
             University yale = dataContext.Universities.First(uni => uni.Name.Equals("Yale"));
+            University beijingTech = dataContext.Universities.First(uni => uni.Name.Equals("Beijing Tech"));
 
+            List<Student> students = new List<Student>();
+
+            students.Add(new Student() { Name = "Carla", Age = 19, Gender = "female", UniversityId = yale.Id });
+            students.Add(new Student() { Name = "Toni", Age = 21, Gender = "male", University = yale });
+            students.Add(new Student() { Name = "Layle", Age = 20, Gender = "female", University = beijingTech });
+            students.Add(new Student() { Name = "Jane", Age = 17, Gender = "female", University = yale });
+
+            dataContext.Students.InsertAllOnSubmit(students);
+
+            dataContext.SubmitChanges();
+
+            DataGrid.ItemsSource = dataContext.Students;
              
         }
     }
