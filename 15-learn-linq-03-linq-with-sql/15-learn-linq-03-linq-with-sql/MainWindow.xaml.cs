@@ -33,7 +33,9 @@ namespace _15_learn_linq_03_linq_with_sql
 
             dataContext = new LinqToSqlDataClassesDataContext(connectionString);
 
-            InsertUniversities("Beijing Tech");
+            //InsertUniversities("Beijing Tech");
+
+            DeleteAllUniversities();
         }
 
         private void InsertUniversities(string name)
@@ -42,6 +44,14 @@ namespace _15_learn_linq_03_linq_with_sql
             
 
             dataContext.Universities.InsertOnSubmit(uni);
+            dataContext.SubmitChanges();
+
+            DataGrid.ItemsSource = dataContext.Universities;
+        }
+
+        private void DeleteAllUniversities()
+        {
+            dataContext.ExecuteCommand("delete from University");
             dataContext.SubmitChanges();
 
             DataGrid.ItemsSource = dataContext.Universities;
