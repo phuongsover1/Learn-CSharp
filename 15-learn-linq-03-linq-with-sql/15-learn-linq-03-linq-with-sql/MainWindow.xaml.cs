@@ -43,13 +43,14 @@ namespace _15_learn_linq_03_linq_with_sql
             //InsertLecture("Math");
             //InsertLecture("History");
 
-            InsertStudentLectureAssociations();
+            //InsertStudentLectureAssociations();
+            GetUniversityOfToni();
         }
 
         private void InsertUniversities(string name)
         {
-            University uni = new University() { Name = name};
-            
+            University uni = new University() { Name = name };
+
 
             dataContext.Universities.InsertOnSubmit(uni);
             dataContext.SubmitChanges();
@@ -82,9 +83,9 @@ namespace _15_learn_linq_03_linq_with_sql
             dataContext.SubmitChanges();
 
             DataGrid.ItemsSource = dataContext.Students;
-             
+
         }
-        
+
         private void InsertLecture(string name)
         {
             dataContext.Lectures.InsertOnSubmit(new Lecture() { Name = name });
@@ -101,7 +102,7 @@ namespace _15_learn_linq_03_linq_with_sql
             Lecture history = dataContext.Lectures.First(lecture => lecture.Name.Equals("History"));
 
             // method 1
-            Student_Lecture carlaLectures  = new Student_Lecture() { StudentId = carla.Id, LectureId = math.Id };
+            Student_Lecture carlaLectures = new Student_Lecture() { StudentId = carla.Id, LectureId = math.Id };
 
             // method 2
             Student_Lecture toniLectures = new Student_Lecture() { Student = toni, Lecture = history };
@@ -114,5 +115,24 @@ namespace _15_learn_linq_03_linq_with_sql
 
 
         }
+
+        private void GetUniversityOfToni()
+        {
+            try
+            {
+                Student toni = dataContext.Students.First(s => s.Name.Equals("Toni"));
+                University uniOfToni = toni.University;
+
+                DataGrid.ItemsSource = new List<University>() { uniOfToni };
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+
+        }
+
     }
 }
