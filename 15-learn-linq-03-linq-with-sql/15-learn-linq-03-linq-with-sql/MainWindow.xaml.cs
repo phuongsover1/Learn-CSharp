@@ -46,7 +46,9 @@ namespace _15_learn_linq_03_linq_with_sql
             //InsertStudentLectureAssociations();
             //GetUniversityOfToni();
 
-            GetLecturesFromToni();
+            //GetLecturesFromToni();
+
+            GetAllStudentsFromYale();
         }
 
         private void InsertUniversities(string name)
@@ -154,14 +156,16 @@ namespace _15_learn_linq_03_linq_with_sql
 
         }
 
-        //private void GetAllStudentsFromYale()
-        //{
-        //    var studentsFromYale = from student in dataContext.Students
-        //                                     where student.University.Name.Equals("Yale")
-        //                                     select student;
+        private void GetAllStudentsFromYale()
+        {
+            var studentsFromYale = from student in dataContext.Students
+                                   where student.University.Name.Equals("Yale")
+                                   select student;
+
+            DataGrid.ItemsSource = studentsFromYale;
 
 
-        //}
+        }
 
 
     }
