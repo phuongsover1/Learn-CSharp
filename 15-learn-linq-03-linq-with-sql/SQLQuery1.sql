@@ -41,9 +41,9 @@
 --select * from Lecture
 --select * from Student
 
-select * from Student
-select * from Lecture
-select * from Student_Lecture
+--select * from Student
+--select * from Lecture
+--select * from Student_Lecture
 --select * from Student
 
 --delete from Student_Lecture where Id = 3 or Id = 4
@@ -51,6 +51,13 @@ select * from Student_Lecture
 --insert Student_Lecture(StudentId, LectureId)
 --values
 --(6,1)
+
+--insert Student
+--values('Phuong', 'male', 22, 7),
+--('Hoa', 'female', 23, 7)
+update Student set UniversityId = 8 where Name = 'Phuong' or Name = 'Hoa'
+select * from Student
+
 
 
 

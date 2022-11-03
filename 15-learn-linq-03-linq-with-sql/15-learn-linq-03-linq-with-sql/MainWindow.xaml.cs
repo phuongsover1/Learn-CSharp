@@ -48,7 +48,8 @@ namespace _15_learn_linq_03_linq_with_sql
 
             //GetLecturesFromToni();
 
-            GetAllStudentsFromYale();
+            //GetAllStudentsFromYale();
+            GetAllUniversityWithFemale();
         }
 
         private void InsertUniversities(string name)
@@ -145,10 +146,11 @@ namespace _15_learn_linq_03_linq_with_sql
             {
                 Student toni = dataContext.Students.First(s => s.Name.Equals("Toni"));
                 var toniLectures = from lectureId in toni.Student_Lectures
-                                             select lectureId.Lecture;
+                                   select lectureId.Lecture;
 
                 DataGrid.ItemsSource = toniLectures;
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -167,6 +169,15 @@ namespace _15_learn_linq_03_linq_with_sql
 
         }
 
+        private void GetAllUniversityWithFemale()
+        {
+            var universitiesWithFemale = (from student in dataContext.Students
+                                         join university in dataContext.Universities on student.UniversityId equals university.Id
+                                         where student.Gender.Equals("female")
+                                         select  university).Distinct();
+
+            DataGrid.ItemsSource = universitiesWithFemale;
+        }
 
     }
 }
