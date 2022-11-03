@@ -35,5 +35,10 @@
 --alter table Student 
 --add constraint FK_Student_University foreign key (UniversityId) references University(Id) on delete cascade
 
-select * from University
+--select * from University
+--select * from Lecture
+
+select * from Lecture
+
+
 

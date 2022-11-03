@@ -38,7 +38,10 @@ namespace _15_learn_linq_03_linq_with_sql
 
             //DeleteAllUniversities();
 
-            InsertStudent();
+            //InsertStudent();
+
+            InsertLecture("Math");
+            InsertLecture("History");
         }
 
         private void InsertUniversities(string name)
@@ -78,6 +81,12 @@ namespace _15_learn_linq_03_linq_with_sql
 
             DataGrid.ItemsSource = dataContext.Students;
              
+        }
+        
+        private void InsertLecture(string name)
+        {
+            dataContext.Lectures.InsertOnSubmit(new Lecture() { Name = name });
+            dataContext.SubmitChanges();
         }
     }
 }
