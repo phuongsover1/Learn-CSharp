@@ -49,7 +49,8 @@ namespace _15_learn_linq_03_linq_with_sql
             //GetLecturesFromToni();
 
             //GetAllStudentsFromYale();
-            GetAllUniversityWithFemale();
+            //GetAllUniversityWithFemale();
+            GetLecturesFromUni("Beijing Tech");
         }
 
         private void InsertUniversities(string name)
@@ -172,11 +173,22 @@ namespace _15_learn_linq_03_linq_with_sql
         private void GetAllUniversityWithFemale()
         {
             var universitiesWithFemale = (from student in dataContext.Students
-                                         join university in dataContext.Universities on student.UniversityId equals university.Id
-                                         where student.Gender.Equals("female")
-                                         select  university).Distinct();
+                                          join university in dataContext.Universities on student.UniversityId equals university.Id
+                                          where student.Gender.Equals("female")
+                                          select university).Distinct();
 
             DataGrid.ItemsSource = universitiesWithFemale;
+        }
+
+        private void GetLecturesFromUni(string universityName)
+        {
+            var lecturesFromUni = (from sl in dataContext.Student_Lectures
+                                  join student in dataContext.Students
+                                  on sl.Student equals student
+                                  where student.University.Name.Equals(universityName)
+                                  select sl.Lecture).Distinct();
+
+            DataGrid.ItemsSource = lecturesFromUni;
         }
 
     }

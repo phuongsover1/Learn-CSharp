@@ -55,8 +55,15 @@
 --insert Student
 --values('Phuong', 'male', 22, 7),
 --('Hoa', 'female', 23, 7)
-update Student set UniversityId = 8 where Name = 'Phuong' or Name = 'Hoa'
-select * from Student
+--update Student set UniversityId = 8 where Name = 'Phuong' or Name = 'Hoa'
+--select s.Id, s.Name from Student s, University u where s.UniversityId = u.Id and u.Name = 'Beijing Tech'
+
+--select Name from Lecture l,Student_Lecture sl where sl.StudentId = 7 and sl.LectureId = l.Id
+insert Student_Lecture 
+values (7,1)
+select * from Student_Lecture
+
+
 
 
 
