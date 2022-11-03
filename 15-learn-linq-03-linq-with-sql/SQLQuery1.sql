@@ -38,7 +38,12 @@
 --select * from University
 --select * from Lecture
 
-select * from Lecture
+--select * from Lecture
+--select * from Student
+
+select * from Student_Lecture
+
+
 
 
 

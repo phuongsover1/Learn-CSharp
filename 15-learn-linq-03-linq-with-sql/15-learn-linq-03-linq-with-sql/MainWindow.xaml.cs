@@ -40,8 +40,10 @@ namespace _15_learn_linq_03_linq_with_sql
 
             //InsertStudent();
 
-            InsertLecture("Math");
-            InsertLecture("History");
+            //InsertLecture("Math");
+            //InsertLecture("History");
+
+            InsertStudentLectureAssociations();
         }
 
         private void InsertUniversities(string name)
@@ -87,6 +89,30 @@ namespace _15_learn_linq_03_linq_with_sql
         {
             dataContext.Lectures.InsertOnSubmit(new Lecture() { Name = name });
             dataContext.SubmitChanges();
+        }
+
+        private void InsertStudentLectureAssociations()
+        {
+            Student carla = dataContext.Students.First(student => student.Name.Equals("Carla"));
+            Student toni = dataContext.Students.First(student => student.Name.Equals("Toni"));
+
+            // get lectures
+            Lecture math = dataContext.Lectures.First(lecture => lecture.Name.Equals("Math"));
+            Lecture history = dataContext.Lectures.First(lecture => lecture.Name.Equals("History"));
+
+            // method 1
+            Student_Lecture carlaLectures  = new Student_Lecture() { StudentId = carla.Id, LectureId = math.Id };
+
+            // method 2
+            Student_Lecture toniLectures = new Student_Lecture() { Student = toni, Lecture = history };
+
+            dataContext.Student_Lectures.InsertAllOnSubmit(new List<Student_Lecture>() { carlaLectures, toniLectures });
+
+            dataContext.SubmitChanges();
+
+            DataGrid.ItemsSource = dataContext.Student_Lectures;
+
+
         }
     }
 }

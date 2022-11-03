@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_15_learn_linq_03_linq_with_sql"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="525">
+        Title="MainWindow" Height="421" Width="525">
     <Grid>
-        <DataGrid Name="DataGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Height="400" Width="500"/>
+        <DataGrid Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Height="279" Width="505"/>
     </Grid>
 </Window>
