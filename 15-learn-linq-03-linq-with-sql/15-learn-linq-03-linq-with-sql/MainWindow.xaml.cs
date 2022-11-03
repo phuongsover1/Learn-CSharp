@@ -44,7 +44,9 @@ namespace _15_learn_linq_03_linq_with_sql
             //InsertLecture("History");
 
             //InsertStudentLectureAssociations();
-            GetUniversityOfToni();
+            //GetUniversityOfToni();
+
+            GetLecturesFromToni();
         }
 
         private void InsertUniversities(string name)
@@ -107,6 +109,7 @@ namespace _15_learn_linq_03_linq_with_sql
             // method 2
             Student_Lecture toniLectures = new Student_Lecture() { Student = toni, Lecture = history };
 
+
             dataContext.Student_Lectures.InsertAllOnSubmit(new List<Student_Lecture>() { carlaLectures, toniLectures });
 
             dataContext.SubmitChanges();
@@ -133,6 +136,33 @@ namespace _15_learn_linq_03_linq_with_sql
 
 
         }
+
+        private void GetLecturesFromToni()
+        {
+            try
+            {
+                Student toni = dataContext.Students.First(s => s.Name.Equals("Toni"));
+                var toniLectures = from lectureId in toni.Student_Lectures
+                                             select lectureId.Lecture;
+
+                DataGrid.ItemsSource = toniLectures;
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+
+        //private void GetAllStudentsFromYale()
+        //{
+        //    var studentsFromYale = from student in dataContext.Students
+        //                                     where student.University.Name.Equals("Yale")
+        //                                     select student;
+
+
+        //}
+
 
     }
 }
