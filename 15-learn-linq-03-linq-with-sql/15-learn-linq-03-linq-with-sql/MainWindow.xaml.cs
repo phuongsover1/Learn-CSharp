@@ -50,7 +50,10 @@ namespace _15_learn_linq_03_linq_with_sql
 
             //GetAllStudentsFromYale();
             //GetAllUniversityWithFemale();
-            GetLecturesFromUni("Beijing Tech");
+            //GetLecturesFromUni("Beijing Tech");
+            //UpdateStudent("Phuong");
+
+            DeleteStudent("Phuong123");
         }
 
         private void InsertUniversities(string name)
@@ -190,6 +193,34 @@ namespace _15_learn_linq_03_linq_with_sql
 
             DataGrid.ItemsSource = lecturesFromUni;
         }
+
+        private void UpdateStudent(string name)
+        {
+            Student student = dataContext.Students.FirstOrDefault(s => s.Name.Equals(name));
+            if (student != null)
+            {
+                student.Name = "Phuong123";
+                dataContext.SubmitChanges();
+
+                DataGrid.ItemsSource = dataContext.Students;
+            }
+        } 
+
+        private void DeleteStudent(string name)
+        {
+            Student student = dataContext.Students.FirstOrDefault(st => st.Name.Equals(name));
+            if (student != null)
+            {
+                dataContext.Students.DeleteOnSubmit(student);
+                dataContext.SubmitChanges();
+
+                DataGrid.ItemsSource = dataContext.Students;
+            }
+                DataGrid.ItemsSource = dataContext.Students;
+        }
+
+
+
 
     }
 }
